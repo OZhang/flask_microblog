@@ -1,0 +1,5 @@
+.vscode/settings.json
+microblog.pyc
+app/routes.pyc
+microblog.pyc
+app/__init__.pyc
