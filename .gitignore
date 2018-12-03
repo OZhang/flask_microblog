@@ -16,3 +16,9 @@ app/__pycache__/__init__.cpython-36.pyc
 app/__pycache__/forms.cpython-36.pyc
 app/__pycache__/routes.cpython-36.pyc
 migrations/__pycache__/env.cpython-36.pyc
+app/__pycache__/forms.cpython-37.pyc
+__pycache__/config.cpython-37.pyc
+__pycache__/microblog.cpython-37.pyc
+app/__pycache__/__init__.cpython-37.pyc
+app/__pycache__/models.cpython-37.pyc
+app/__pycache__/routes.cpython-37.pyc
