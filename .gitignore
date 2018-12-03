@@ -22,3 +22,7 @@ __pycache__/microblog.cpython-37.pyc
 app/__pycache__/__init__.cpython-37.pyc
 app/__pycache__/models.cpython-37.pyc
 app/__pycache__/routes.cpython-37.pyc
+migrations/__pycache__/env.cpython-37.pyc
+migrations/versions/__pycache__/18e8c1aca54f_users_table.cpython-37.pyc
+migrations/versions/__pycache__/3eb239055af0_new_fields_in_user_model.cpython-37.pyc
+migrations/versions/__pycache__/a43812244b77_posts_table.cpython-37.pyc
