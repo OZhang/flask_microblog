@@ -28,3 +28,5 @@ migrations/versions/__pycache__/3eb239055af0_new_fields_in_user_model.cpython-37
 migrations/versions/__pycache__/a43812244b77_posts_table.cpython-37.pyc
 app/__pycache__/errors.cpython-36.pyc
 app/__pycache__/errors.cpython-37.pyc
+logs/microblog.log.1
+logs/microblog.log
