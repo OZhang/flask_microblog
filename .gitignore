@@ -30,3 +30,4 @@ app/__pycache__/errors.cpython-36.pyc
 app/__pycache__/errors.cpython-37.pyc
 logs/microblog.log.1
 logs/microblog.log
+migrations/versions/__pycache__/50ebad20f70f_followers.cpython-37.pyc
