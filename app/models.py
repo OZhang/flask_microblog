@@ -18,7 +18,7 @@ class User(UserMixin, db.Model):
     posts = db.relationship('Post',backref='author',lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
-    follower = db.relationship(
+    followed = db.relationship(
         'User', secondary=followers, 
         primaryjoin = (followers.c.follower_id == id),
         secondaryjoin = (followers.c.followed_id == id),
@@ -50,7 +50,8 @@ class User(UserMixin, db.Model):
         followed = Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id)
-        own = Post.query.filter_by(user_id == self.id)
+        own = Post.query.filter_by(user_id = self.id)
+        
         return followed.union(own).order_by(Post.timestamp.desc())
 
 @login.user_loader
