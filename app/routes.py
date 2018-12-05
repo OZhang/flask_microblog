@@ -7,6 +7,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
+from app.forms import ResetPasswordRequestForm
+from app.email import send_password_reset_email
 
 #＠app.route行是装饰器
 #装饰器的常见模式是使用它们将函数注册为某些事件的回调函数
@@ -142,3 +144,17 @@ def explore():
     prev_url = url_for('explore', page=posts.prev_num) if posts.has_prev else None
     return render_template('index.html', title='Explore', posts=posts.items,
         next_url=next_url, prev_url=prev_url)
+
+@app.route('/request_password_request', methods=['GET', 'POST'])
+def request_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash('Check your email for the instructions to reset your password')
+        return redirect(url_for('login'))
+    return render_template('request_password_request.html', 
+        title='Reset Password', form=form)
